@@ -2,6 +2,7 @@ package damp_2.utad.actividad3fernandosanchez;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     ButtonListeners btnListener;
 
@@ -75,12 +76,24 @@ public class MainActivity extends Activity {
     }
 
     public void cambiarPagLogin(){
-        Intent intent = new Intent(this,Activity2.class);
+        Intent intent = new Intent(getBaseContext(),Activity2.class);
         startActivity(intent);
-        Finish();
+        finish();
+    }
 
+    public void botonAceptar(){
+        if (edtxtPass2.getText() == edtxtRepPass.getText() ){
+            edtxtRepPass.setHighlightColor(Color.RED);
+        }else{
+            activity_layout1.setVisibility(View.VISIBLE);
+            activity_layout2.setVisibility(View.GONE);
+        }
 
+    }
 
+    public void botonCancelar(){
+        activity_layout1.setVisibility(View.VISIBLE);
+        activity_layout2.setVisibility(View.GONE);
     }
 
 
