@@ -1,6 +1,7 @@
 package damp_2.utad.actividad3fernandosanchez;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,12 +16,20 @@ public class MainActivity extends Activity {
     public EditText edtxtUsuario = null;
     public EditText edtxtPass = null;
 
+    public EditText edtxtUsuario2 = null;
+    public EditText edtxtPass2 = null;
+    public EditText edtxtRepPass = null;
+    public EditText edtxtMail = null;
+
 
     public LinearLayout activity_layout1=null;
     public LinearLayout activity_layout2=null;
 
     public Button btnLogin=null;
     public Button btnRegistrarse=null;
+
+    public Button btnAceptar=null;
+    public Button btnCancelar=null;
 
 
     public void init_buttons() {
@@ -29,8 +38,14 @@ public class MainActivity extends Activity {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnRegistrarse = (Button) findViewById(R.id.btnRegistrarse);
 
+        btnAceptar = (Button) findViewById(R.id.btnAceptar);
+        btnCancelar = (Button) findViewById(R.id.btnCancelar);
+
         btnLogin.setOnClickListener(btnListener);
         btnRegistrarse.setOnClickListener(btnListener);
+
+        btnAceptar.setOnClickListener(btnListener);
+        btnCancelar.setOnClickListener(btnListener);
 
 
     }
@@ -38,6 +53,11 @@ public class MainActivity extends Activity {
     public void init_text(){
         edtxtUsuario=(EditText) findViewById(R.id.edtxtUsuario);
         edtxtPass=(EditText) findViewById(R.id.edtxtPass);
+
+        edtxtUsuario2=(EditText) findViewById(R.id.edtxtUsuario2);
+        edtxtPass2=(EditText) findViewById(R.id.edtxtPass2);
+        edtxtRepPass=(EditText) findViewById(R.id.edtxtRepPass);
+        edtxtMail=(EditText) findViewById(R.id.edtxtMail);
 
 
     }
@@ -49,9 +69,18 @@ public class MainActivity extends Activity {
 
     }
 
-    public void cambiarPag() {
+    public void cambiarPagRegistrarse() {
         activity_layout1.setVisibility(View.GONE);
         activity_layout2.setVisibility(View.VISIBLE);
+    }
+
+    public void cambiarPagLogin(){
+        Intent intent = new Intent(this,Activity2.class);
+        startActivity(intent);
+        Finish();
+
+
+
     }
 
 
