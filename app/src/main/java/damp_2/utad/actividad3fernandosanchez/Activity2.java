@@ -2,6 +2,7 @@ package damp_2.utad.actividad3fernandosanchez;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,7 +11,7 @@ import android.widget.LinearLayout;
 /**
  * Created by fernando.sanchez on 30/10/2015.
  */
-public class Activity2 extends Activity {
+public class Activity2 extends AppCompatActivity {
 
     ButtonListeners2 btnListener;
 

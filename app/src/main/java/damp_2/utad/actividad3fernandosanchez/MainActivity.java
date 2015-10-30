@@ -76,14 +76,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cambiarPagLogin(){
+
+
+
         Intent intent = new Intent(getBaseContext(),Activity2.class);
         startActivity(intent);
         finish();
     }
 
     public void botonAceptar(){
+
         if (edtxtPass2.getText() == edtxtRepPass.getText() ){
             edtxtRepPass.setHighlightColor(Color.RED);
+        //}else if(edtxtMail.getText().equals()){
+
+
         }else{
             activity_layout1.setVisibility(View.VISIBLE);
             activity_layout2.setVisibility(View.GONE);
